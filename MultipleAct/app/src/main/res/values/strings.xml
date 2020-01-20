@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MultipleAct</string>
+    <string name="home_menu">Home Menu</string>
+    <string name="using_linear_layout">Using Linear Layout</string>
+    <string name="rl_description">
+        Relative Layout utilizes the relationship with each other and parents to define the view\'s position.
+    </string>
+    <string name="cl_description">
+        Constraint Layout needs at least ONE horizontal and ONE vertical constraints to define the views within it.
+    </string>
+    <string name="gl_description">
+        Grid Layout arranges the views in distributed rows and columns manner.
+    </string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="grid_layout">Grid Layout</string>
+    <string name="rl_diagram">rl_diagram</string>
+    <string name="cl_diagram">cl_diagram</string>
+    <string name="gl_diagram">gl_diagram</string>
+    <string name="enter_your_name">Enter your name:</string>
+    <string name="your_name">Your Name</string>
+    <string name="back_to_home">back to home</string>
+    <string name="C">C</string>
+    <string name="divide_symbol">÷</string>
+    <string name="multiply_symbol">X</string>
+    <string name="backspace_symbol"><![CDATA[<]]></string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="minus_symbol">-</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="plus_symbol">+</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="percentage_symbol">%</string>
+    <string name="_0">0</string>
+    <string name="dot_symbol">•</string>
+    <string name="equal_symbol">=</string>
+    <string name="three_dots">...</string>
+    <string name="calc_ans">Ans</string>
+</resources>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">OurTeam</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shin_wei">Shin Wei</string>
+    <string name="lay_yan">Lay Yan</string>
+    <string name="xun_wei">Xun Wei</string>
+    <string name="syazwan">Syazwan</string>
+    <string name="know_more">Click on each button to know more about us!</string>
+    <string name="i_am_shin_wei">Name: Lim Shin Wei\nMajor: AI\nGlad to be in this team!</string>
+    <string name="i_am_xun_wei">Name: Yee Xun Wei\nMajor: IS\nGlad to be in this team!</string>
+    <string name="i_am_lay_yan">Name: Tan Lay Yan\nMajor: SE\nGlad to be in this team!</string>
+    <string name="i_am_syazwan">Name: Muhammad Syazwan Bin Abdul Razak\nMajor: STK\nGlad to be in this team!</string>
+
+</resources>

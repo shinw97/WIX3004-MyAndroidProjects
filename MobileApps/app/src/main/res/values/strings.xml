@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">About Me</string>
+    <string name="HelloLabel">Hi! My name is LIM SHIN WEI!</string>
+    <string name="iam">I am a final year student currently studying AI.</string>
+</resources>

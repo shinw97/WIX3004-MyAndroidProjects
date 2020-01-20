@@ -1,0 +1,107 @@
+// New layout resource file
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_profileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:ems="10"
+        android:hint="Profile Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+// --------------------------------------------------------------------------------------------------------
+
+// New java class
+public class ChangeProfileNameDialog extends AppCompatDialogFragment {
+    private EditText etProfileName;
+    private dialogListener listener;
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        LayoutInflater layoutInflater = getActivity().getLayoutInflater();
+        View view = layoutInflater.inflate(R.layout.layout_dialog_change_profile_name, null);
+        builder.setView(view)
+                .setTitle("Change Profile Name")
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String profileName = etProfileName.getText().toString();
+                        listener.applyTexts(profileName);
+                    }
+                });
+
+        etProfileName = view.findViewById(R.id.et_profileName);
+        return builder.create();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener = (dialogListener) context;
+        } catch (Exception e) {
+            throw new ClassCastException(context.toString() + "must implement DialogListener.");
+        }
+    }
+
+    interface dialogListener {
+        void applyTexts(String profileName);
+    }
+}
+
+// ------------------------------------------------------------------------------------------------------
+
+
+// At MainActivity.java
+public class MainActivity extends AppCompatActivity implements ChangeProfileNameDialog.dialogListener{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        // RenameProfile
+        Button btnNewGroup = (Button) findViewById(R.id.btn_renameProfile);
+        btnNewGroup.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
+    }
+
+    void openDialog() {
+        ChangeProfileNameDialog dialog = new ChangeProfileNameDialog();
+        dialog.show(getSupportFragmentManager(), "change profile name dialog");
+    }
+
+    @Override
+    public void applyTexts(String profileName) {
+        Toast.makeText(this,"Profile name changed to " + profileName, Toast.LENGTH_SHORT).show();
+    }
+
+
+}
+
+
